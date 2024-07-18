@@ -1,17 +1,17 @@
 package constant
 
 var Errno = map[int]string{
-	400:   "系统错误",
-	401:   "签名认证错误",
-	10001: "钱包地址已存在，请勿重复添加",
-	10002: "支付交易已存在，请勿重复创建",
-	10003: "无可用钱包地址，无法发起支付",
-	10004: "支付金额有误, 无法满足最小支付单位",
-	10005: "无可用金额通道",
-	10006: "汇率计算错误",
-	10007: "订单区块已处理",
-	10008: "订单不存在",
-	10009: "无法解析请求参数",
+	400:   "System Error",
+	401:   "Signature authentication error",
+	10001: "The wallet address already exists, please do not add it again",
+	10002: "The payment transaction already exists, please do not create it again",
+	10003: "No available wallet address, unable to initiate payment",
+	10004: "The payment amount is incorrect and cannot meet the minimum payment unit",
+	10005: "No available amount channel",
+	10006: "Exchange rate calculation error",
+	10007: "Order block processed",
+	10008: "Order does not exist",
+	10009: "Unable to parse request parameters",
 }
 
 var (
