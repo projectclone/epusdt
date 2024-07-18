@@ -1,12 +1,12 @@
 package service
 
 import (
-	"fmt"
+	// "fmt"
 	"github.com/assimon/luuu/model/data"
 	"github.com/assimon/luuu/model/request"
 	"github.com/assimon/luuu/mq"
 	"github.com/assimon/luuu/mq/handle"
-	"github.com/assimon/luuu/telegram"
+	// "github.com/assimon/luuu/telegram"
 	"github.com/assimon/luuu/util/http_client"
 	"github.com/assimon/luuu/util/json"
 	"github.com/assimon/luuu/util/log"
@@ -137,17 +137,17 @@ func Trc20CallBack(token string, wg *sync.WaitGroup) {
 		orderCallbackQueue, _ := handle.NewOrderCallbackQueue(order)
 		mq.MClient.Enqueue(orderCallbackQueue, asynq.MaxRetry(5))
 		// 发送机器人消息
-		msgTpl := `
-<b>📢📢有新的交易支付成功！</b>
-<pre>交易号：%s</pre>
-<pre>订单号：%s</pre>
-<pre>请求支付金额：%f cny</pre>
-<pre>实际支付金额：%f usdt</pre>
-<pre>钱包地址：%s</pre>
-<pre>订单创建时间：%s</pre>
-<pre>支付成功时间：%s</pre>
-`
-		msg := fmt.Sprintf(msgTpl, order.TradeId, order.OrderId, order.Amount, order.ActualAmount, order.Token, order.CreatedAt.ToDateTimeString(), carbon.Now().ToDateTimeString())
+		// msgTpl := `
+// <b>📢📢有新的交易支付成功！</b>
+// <pre>交易号：%s</pre>
+// <pre>订单号：%s</pre>
+// <pre>请求支付金额：%f cny</pre>
+// <pre>实际支付金额：%f usdt</pre>
+// <pre>钱包地址：%s</pre>
+// <pre>订单创建时间：%s</pre>
+// <pre>支付成功时间：%s</pre>
+// `
+		// msg := fmt.Sprintf(msgTpl, order.TradeId, order.OrderId, order.Amount, order.ActualAmount, order.Token, order.CreatedAt.ToDateTimeString(), carbon.Now().ToDateTimeString())
 		// telegram.SendToBot(msg)
 	}
 }
