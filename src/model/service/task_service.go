@@ -148,6 +148,6 @@ func Trc20CallBack(token string, wg *sync.WaitGroup) {
 <pre>支付成功时间：%s</pre>
 `
 		msg := fmt.Sprintf(msgTpl, order.TradeId, order.OrderId, order.Amount, order.ActualAmount, order.Token, order.CreatedAt.ToDateTimeString(), carbon.Now().ToDateTimeString())
-		telegram.SendToBot(msg)
+		// telegram.SendToBot(msg)
 	}
 }
