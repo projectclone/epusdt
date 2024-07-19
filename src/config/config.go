@@ -3,7 +3,6 @@ package config
 import (
 	"fmt"
 	"github.com/spf13/viper"
-	"net/url"
 	"os"
 	"time"
 )
@@ -42,8 +41,8 @@ func Init() {
 		RuntimePath,
 		viper.GetString("log_save_path"))
 	MysqlDns = fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-		url.QueryEscape(viper.GetString("mysql_user")),
-		url.QueryEscape(viper.GetString("mysql_passwd")),
+		viper.GetString("mysql_user"),
+		viper.GetString("mysql_passwd"),
 		fmt.Sprintf(
 			"%s:%s",
 			viper.GetString("mysql_host"),
