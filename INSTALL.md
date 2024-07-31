@@ -1,3 +1,5 @@
+OS: ubuntu 20.04  
+
 apt remove golang-go  
 apt remove --auto-remove golang-go  
 wget https://golang.org/dl/go1.20.3.linux-amd64.tar.gz  
